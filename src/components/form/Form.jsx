@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import validation from "./validation";
+import style from "./Form.module.css"
 export default function Form({login,}) {
 
   const [userData, setUserData] = useState({
@@ -25,9 +26,9 @@ export default function Form({login,}) {
   }
   
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={style.container}>
+      <form onSubmit={handleSubmit} className={style.form}>
+        <div className={style.email}>
           <label htmlFor="email">Email</label>
           <input type="text" name="email" value={userData.email} onChange={handleInputChange} />
           <p>{errors.email}</p>

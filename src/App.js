@@ -1,9 +1,10 @@
-import "./App.css";
+import style from "./App.module.css"
 import Cards from "./components/cards/Cards.jsx";
 import Nav from "./components/nav/Nav";
 import About from "./components/about/About";
 import Detail from "./components/detail/Detail";
 import Form from "./components/form/Form";
+import Favorites from "./components/favorites/Favorites";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
@@ -46,7 +47,7 @@ function App() {
     setCharacters(characters.filter((char) => char.id !== parseInt(id)));
   };
   return (
-    <div className="App">
+    <div className={style.App}>
       {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
@@ -56,6 +57,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/favorites" element= {<Favorites />}/>
       </Routes>
     </div>
   );
