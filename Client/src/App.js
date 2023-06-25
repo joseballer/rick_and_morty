@@ -32,12 +32,12 @@ function App() {
       return alert("Este personaje esta repetido");
     }
 
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+    axios(`http://localhost:3002/rickandmorty/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("¡No hay personajes con este ID!");
+          alert("¡No hay personajes con este ID!");
         }
       }
     );
