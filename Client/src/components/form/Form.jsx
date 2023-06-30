@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import validation from "./validation";
 import style from "./Form.module.css"
-export default function Form({login,}) {
+export default function Form({login}) {
 
   const [userData, setUserData] = useState({
     email:"",

@@ -1,2 +1,2 @@
-users = [{email:"email@email.com"/*Tu email*/, password:"123pass" /*Tu password*/}];
-module.exports = users;
+const user = [{email:"email@email.com", password:"123pass"}];
+module.exports = user;

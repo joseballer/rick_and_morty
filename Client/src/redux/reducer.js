@@ -1,22 +1,15 @@
-import { ADD_FAV, REMOVE_FAV } from "./actions";
-
 const initialState = {
   myFavorites: [],
 };
 
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_FAV:
-      return { ...state, myFavorites: [state.myFavorites, action.payload] };
+const rootReducer = (state = initialState, {type, payload}) => {
+  switch (type) {
+    case "ADD_FAV":
+      return { ...state, myFavorites: payload, allCharacters: payload };
 
-    case REMOVE_FAV:
-      return {
-        ...state,
-        myFavorites: state.myFavorites.filter(
-          (char) => char.id !== action.payload
-        ),
-      };
-      
+    case "REMOVE_FAV":
+      return { ...state, myFavorites: payload };
+
     default:
       return { ...state };
   }
