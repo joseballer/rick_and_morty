@@ -1,4 +1,5 @@
 const user = require("../utils/users");
+
 const login = (req, res) => {
   const { email, password } = req.query;
   user.forEach((user) => {
